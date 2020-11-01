@@ -12,12 +12,12 @@ import java.awt.event.MouseMotionListener;
  */
 public class MyPanel extends JPanel implements MouseMotionListener , MouseListener {
 
-    GraphicsButton gButton[4][4] = new GraphicsButton[][];
-    String icons[][] = {
+    GraphicsButton gButtons[4][4] = new GraphicsButton[][];
+    String names[][] = {
             {"7","8","9","+"},
             {"4","5","6","+"},
             {"1","2","3","+"},
-            {"7","8","9","+"}
+            {".","0","-","/"}
     };
 
     public MyPanel(){
