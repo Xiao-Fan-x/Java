@@ -12,7 +12,7 @@ import java.awt.event.MouseMotionListener;
  */
 public class MyPanel extends JPanel implements MouseMotionListener , MouseListener {
 
-    GraphicsButton gButtons[4][4] = new GraphicsButton[][];
+    GraphicsButton gButtons[][] = new GraphicsButton[4][4];
     String names[][] = {
             {"7","8","9","+"},
             {"4","5","6","+"},
@@ -24,11 +24,9 @@ public class MyPanel extends JPanel implements MouseMotionListener , MouseListen
 
         for (int row = 0;row < 4; row++){
             for (int col = 0; col < 4; col++){
-                gButton[row][col] = new GraphicsButton(50+row*100,100+)
+                gButtons[row][col] = new GraphicsButton(50+row*100,100+row*80,80,60,names[row][col]);
             }
         }
-        gButton = new GraphicsButton(100,100,80,60,"X");
-
         this.addMouseListener(this);
         this.addMouseMotionListener(this);
 
@@ -36,8 +34,11 @@ public class MyPanel extends JPanel implements MouseMotionListener , MouseListen
 
     @Override
     public void paint(Graphics g) {
-        gButton.paint(g);
-
+        for (int row = 0;row <  4;row ++){
+            for (int col = 0;col < 4;col++){
+                gButtons[row][col].paint(g);
+            }
+        }
     }
 
     @Override
@@ -47,7 +48,11 @@ public class MyPanel extends JPanel implements MouseMotionListener , MouseListen
 
     @Override
     public void mousePressed(MouseEvent e) {
-        gButton.mousePressed(e);
+        for (int row = 0;row <  4;row ++){
+            for (int col = 0;col < 4;col++){
+                gButtons[row][col].mousePressed(e);
+            }
+        }
     }
 
     @Override
@@ -72,7 +77,11 @@ public class MyPanel extends JPanel implements MouseMotionListener , MouseListen
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        gButton.mouseMoved(e);
+        for (int row = 0;row <  4;row ++){
+            for (int col = 0;col < 4;col++){
+                gButtons[row][col].mouseMoved(e);
+            }
+        }
         //
         repaint();
 
