@@ -20,7 +20,7 @@ public class MyPanel extends JPanel implements MouseMotionListener , MouseListen
             {".","0","-","/"}
     };
 
-    public MyPanel(){
+   public MyPanel(){
 
         for (int row = 0;row < 4; row++){
             for (int col = 0; col < 4; col++){
